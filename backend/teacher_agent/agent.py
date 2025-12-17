@@ -4,6 +4,7 @@ from backend.teacher_agent.prompt import ROOT_INSTRUCTIONS
 from backend.teacher_agent.sub_agents.schema_designer_agent.agent import schema_designer_agent
 from backend.teacher_agent.sub_agents.memory_agent.agent import memory_agent
 from backend.teacher_agent.sub_agents.quiz_agent.agent import quiz_agent
+from backend.teacher_agent.sub_agents.query_explainer_agent.agent import query_explainer_agent
 
 
 root_agent = LlmAgent(
@@ -15,6 +16,7 @@ root_agent = LlmAgent(
         AgentTool(schema_designer_agent),
         AgentTool(memory_agent),
         AgentTool(quiz_agent),
+        AgentTool(query_explainer_agent),
     ],
 
 )
